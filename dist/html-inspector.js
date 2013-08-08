@@ -4,7 +4,7 @@
  * Copyright (c) 2013 Philip Walton <http://philipwalton.com>
  * Released under the MIT license
  *
- * Date: 2013-08-04
+ * Date: 2013-08-08
  */
 
 ;(function(root, document) {
@@ -103,8 +103,8 @@ function foundIn(needle, haystack) {
 function isCrossOrigin(url) {
   var reURL = /^(?:(https?:)\/\/)?((?:[0-9a-z\.\-]+)(?::(?:\d+))?)/
     , matches = reURL.exec(url)
-    , protocol = matches[1]
-    , host = matches[2]
+    , protocol = matches && matches[1]
+    , host = matches && matches[2]
   return !(protocol == location.protocol && host == location.host)
 }
 
